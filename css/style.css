@@ -1,0 +1,37 @@
+
+.menutop {
+	margin-top: 27% !important;
+}
+.menu-font {
+	font-size:13px !important;
+}
+.menu-bold {
+	font-weight: bold;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	border-radius: 8px !important;
+	width: 29px !important; 
+	height: 20px !important;
+	margin-top: 3px !important;
+}
+.space
+{
+margin-bottom: 5px !important;
+}
+@media only screen and (max-width: 320px) {
+
+   .btn-menu-font {font-size: 10px !important; }
+   .hsa-btn { padding:0 5px !important; margin:5px 0 !important}
+   .hsabal-btn { padding:0 2px !important; }
+   .annual-slider { margin:-72px -5px !important }
+   .contribution-btn { margin:-74px -5px !important }
+   .menu-height { height: 150px !important }
+   .menu-height-risk { height:120px !important }
+   .menu-font { font-size:10px !important }
+   .age-slider { margin:10px 10px !important }
+   .font-green-haze { font-size:14px !important }
+   .body-height { height:760px !important }
+   .age-sli { font-size:9px !important ; margin:5px 0 !important}
+}
+
+
