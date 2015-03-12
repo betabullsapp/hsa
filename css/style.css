@@ -14,9 +14,36 @@
 	height: 20px !important;
 	margin-top: 3px !important;
 }
+.icon-radius {
+ border-radius: 4px !important;
+ background: #B3ACAC !important;
+ font-size: 10px !important;
+}
+.btnbrowser
+{
+width: 15% !important;
+background: #aaa url(../img/radio_2_bg_on.png) repeat-x left top !important;
+color: #fff !important;
+text-shadow: 1px 1px 0 #aaa !important;
+margin: -3px 1% 0 1% !important;
+padding: 9px 1% 11px 1% !important;
+border: 1px solid rgba(0,0,0,0.1) !important;
+float: left !important;
+line-height: 12px !important;
+text-align: center !important;
+font-size: 12px !important;
+
+
+border-radius: 6px !important; 
+
+transition: background-color 0.2s ease-in-out !important;
+position: relative !important;
+
+}
+}
 .space
 {
-margin-bottom: 5px !important;
+	margin-bottom: 5px !important;
 }
 @media only screen and (max-width: 320px) {
 
@@ -34,4 +61,21 @@ margin-bottom: 5px !important;
    .age-sli { font-size:9px !important ; margin:5px 0 !important}
 }
 
-
+.total-content {
+ text-align:center;background-color:#00B14E;color:#ffffff;
+}
+.total-content1 {
+ text-align:center;background-color:#89c4f4;color:#ffffff;
+}
+.heading-content {
+font-size:11px;background-color:#89c4f4;color:#ffffff;width:5%;
+}
+.heading-content1 {
+font-size:11px;background-color:#00B14E;color:#ffffff;width:6%;
+}
+.gray-textbox {
+border:none;background-color:#f9f9f9;width:44px !important;
+}
+.white-textbox {
+border:none;background-color:#ffffff;width:44px !important;
+}
