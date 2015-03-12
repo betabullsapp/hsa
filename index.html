@@ -97,20 +97,20 @@
 					
 			
 			
-			<div class="page-bar">
+			<div class="page-bar" style="background-color:white !important">
 				<ul class="page-breadcrumb">
 					<li>
-						<i class="fa fa-home"></i>
+						
 						<a href="#" class="pwelcome" >Welcome</a>
 						<span>,</span>
 					</li>
 					<li>
-						<a href="#" style="text-decoration:none">UserName</a>
+						<a href="#" style="text-decoration:none">Guru Sekhar Reddy</a>
 					</li>
 				</ul>
-				<div class="page-toolbar">
-					<div id="dashboard-report-range" class="pull-right tooltips btn btn-fit-height grey-salt pfeild"  >
-						<span ><a href="#" class="phsa" >HSA </a><span class="pplanner" >Planner</span></span>
+				<div class="page-toolbar" style="background-color:white !important">
+					<div id="dashboard-report-range" class="pull-right tooltips btn btn-fit-height grey-salt pfeild" style="background-color:white !important" >
+						<span ><span  class="phsa" >HSA </span><span class="pplanner" >Planner</span></span>
 					</div>
 				</div>
 			</div>
@@ -175,7 +175,7 @@
 									<div id="" class="chart ">
 									Current Balance:<br>$12,35.67
 									<div><br><br><br> 
-									As of:<br>MM/DD/YYYY
+									As of:<br>03/14/2015
 									</div>
 									</div>
 								</div>
@@ -184,16 +184,16 @@
 						</div>
 				<div class="col-md-5">
 							<!-- BEGIN CHART PORTLET-->
-							<div class="portlet light bordered pchart" >
-								<div class="portlet-title">
+							<div class="portlet light bordered  pcharttitle" >
+								<!-- <div class="portlet-title">
 									<div class="caption">
 										<i class="fa fa-pie-chart font-green-haze"></i>
 										<span class="font-green-haze ptext"> Distribution between various funds</span>
 									</div>
-								</div>
+								</div> -->
 								<div class="portlet-body">
 									<!--div id="pie_chart_5" class="chart"></div-->
-									<div id="pie_chart_1" class="chart"></div>
+									<div id="pie_chart_1" class="chart pchartbody" ></div>
 								</div>
 							</div>
 							<!-- END CHART PORTLET-->
@@ -201,108 +201,81 @@
 				<div class="col-md-5">
 					<!-- BEGIN SAMPLE TABLE PORTLET-->
 					<div class="portlet light bordered ptbody" >
-						<div class="portlet-title">
+						<div class="portlet-title portallocations" >
 							<div class="caption">
-								<i class="fa fa-cog font-green-haze"></i>
-								<span class="font-green-haze ptext" >Funds Allocations</span>
+								
+								<span class="font-green-haze ptext" style="margin-left:20px;color:white !important" > Allocations</span>
 							</div>
 							
 						</div>
-						<div class="portlet-body " style="font-size:12px !important">
-							<div class="table-scrollable ">
-								<table class="table table-hover">
-								<thead>
-								<tr>
-									<th>
-										 #
-									</th>
-									<th>
-										 Fund name
-									</th>
-									<th>
-										 Balance
-									</th>
-									<th>
-										 Fund type
-									</th>
-									<th>
-										 % of allocation
-									</th>
-								</tr>
-								</thead>
-								<tbody>
-								<tr>
-									<td>
-										 1
-									</td>
-									<td>
-										 Vanguard
-									</td>
-									<td>
-										 $8,500
-									</td>
-									<td>
-										 Open-end Funds
-									</td>
-									<td>
-										75.12%
-									</td>
-								</tr>
-								<tr>
-									<td>
-										 2
-									</td>
-									<td>
-										 Fidelity
-									</td>
-									<td>
-										 $5,500
-									</td>
-									<td>
-										 Closed-end Funds
-									</td>
-									<td>
-										33.5%
-									</td>
-								</tr>
-								<tr>
-									<td>
-										 3
-									</td>
-									<td>
-										 HSBC
-									</td>
-									<td>
-										 $6,989
-									</td>
-									<td>
-										 Unit Investment trusts
-									</td>
-									<td>
-										55.90%
-									</td>
-								</tr>
-								<tr>
-									<td>
-										 4
-									</td>
-									<td>
-										 BLackRock
-									</td>
-									<td>
-										 $5,875
-									</td>
-									<td>
-										 Exchange trade Funds
-									</td>
-									<td>
-										65.12%
-									</td>
-								</tr>
-								
-								</tbody>
-								</table>
-							</div>
+						<div class="portlet-body portchartbody" >
+							<div class="table-scrollable">
+										<table class="table table-striped ">
+										<!-- <thead>
+										<th class="portlet-title  font-green-haze">
+										Resulting Allocations
+										</th>
+										</thead> -->
+										<tbody>
+										<tr>
+											<td class="font-green-haze">
+												 <span class="label label-sm label-danger" style="background-color:green;padding-left:12px;border-radius: 5px !important;">
+												 </span> &nbsp;&nbsp;Large-Cap Equity
+											</td>
+											
+											<td class="font-blue-haze">
+												<span style="color:green">
+												 25%</span>
+											</td>
+										</tr>
+										<tr>
+											<td style="color:#89c4f4">
+												  <span class="label label-sm label-danger" style="background-color:#89c4f4;padding-left:12px;border-radius: 5px !important;">
+												 </span> &nbsp;&nbsp;Small/Mid-Cap Equity
+											</td>
+											
+											<td>
+												<span style="color:#89c4f4">
+												5% </span>
+											</td>
+										</tr>
+										<tr>
+											<td style="color:#DFBA49">
+												 <span class="label label-sm label-danger" style="background-color:#DFBA49;padding-left:12px;border-radius: 5px !important;">
+												 </span>&nbsp; &nbsp;International
+											</td>
+											
+											<td>
+												<span style="color:#DFBA49">
+												10% </span>
+											</td>
+										</tr>
+										<tr>
+										
+											<td style="color:red">
+												 <span class="label label-sm label-danger" style="background-color:red;padding-left:12px;border-radius: 5px !important;">
+												 </span> &nbsp;&nbsp;Fixed Income
+											</td>
+											
+											<td>
+												<span style="color:red">
+												50% </span>
+											</td>
+										</tr>
+										<tr>
+											<td style="color:orange">
+												<span class="label label-sm label-danger" style="background-color:orange;padding-left:12px;border-radius: 5px !important;">
+												 </span> &nbsp;&nbsp;Savings Account
+											</td>
+											
+											<td>
+												<span style="color:orange" >
+												10% </span>
+											</td>
+										</tr>
+										</tbody>
+										</table>
+									</div>
 						</div>
 					</div>
 					<!-- END SAMPLE TABLE PORTLET-->

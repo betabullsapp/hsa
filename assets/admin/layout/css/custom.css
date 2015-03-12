@@ -65,21 +65,18 @@ height:200px;
 }
 .ptbody
 {
-height:385px;
+height:293px;
 }
 .ptext
 {
 font-size:16px !important;
 }
-.pchart
-{
-height:383px;
-}
+
 .psummary
 {
 margin-bottom:7px;
 margin-top:-18px;
-font-size:20px;
+font-size:24px;
 }
 .psummarybuttons
 {
@@ -91,7 +88,8 @@ background-color:#f7f7f7 !important;
 }
 .psummarytext
 {
-margin:0px 0px 0px 0px
+margin:-10px 0px 0px 0px
+
 }
 .phsa
 {
@@ -109,7 +107,8 @@ background-color:#f7f7f7 !important;
 }
 .pwelcome
 {
-text-decoration:none;font-size:23px !important;
+text-decoration:none !important;
+font-size:23px !important;
 }
 .pheaderhsa
 {
@@ -118,4 +117,28 @@ color:#A2c808;margin-top:4px !important;
 .plannerheader
 {
 color:#3a9fe3;
+}
+.pcharttitle
+{
+height: 295px;
+}
+.pchartbody
+{
+margin-top:-28px;
+}
+.portallocations
+{
+background-color:#5385b2;
+border-top-left-radius:8px !important;
+border-top-right-radius:8px !important;
+margin-left:-12px;
+margin-right:-10px;
+margin-top:-6px;
+}
+.portchartbody
+{
+font-size:12px !important;
+margin-top:-19px;
+margin-left:-12px;
+margin-right:-11px;
 }
