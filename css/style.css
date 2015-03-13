@@ -74,10 +74,10 @@ font-size:11px;background-color:#89c4f4;color:#ffffff;width:5%;
 font-size:11px;background-color:#00B14E;color:#ffffff;width:6%;
 }
 .gray-textbox {
-border:none;background-color:#f9f9f9;width:44px !important;
+width:44px !important;
 }
 .white-textbox {
-border:none;background-color:#ffffff;width:44px !important;
+background-color:#ffffff;width:44px !important;
 }
 
 
