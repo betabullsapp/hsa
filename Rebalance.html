@@ -39,7 +39,7 @@
 <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
 <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-reversed">
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-reversed" style="overflow:hidden">
 <!-- BEGIN HEADER -->
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
@@ -101,12 +101,17 @@
 			</div>
 			<div class="col-md-offset-5 col-md-9">
 			<button type="submit" class="btn btn-success reload" id="rebalance1">Rebalance</button>
+			
 			</div>
+			
 			
 			<div class="col-md-offset-4 col-md-9 pcontent">
 				<h3><span id="rebalancemsg" class="rebal"></span></h3>
 			</div>
+			<div class="back_space"></div>
+			<a href="index.html" type="submit" class="btn btn-success reload" >Back</a>
 			</div>
+			
 		</div>
 	<!--/div-->
 <div class="page-footer">
@@ -180,6 +185,7 @@ Demo.init(); // init demo features
 			//alert("hi");
 			$("#rebalancemsg").html("Rebalance is done");	
 		});
+		
 	});
 </script>	
 
