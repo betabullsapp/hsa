@@ -184,8 +184,8 @@
 												
 											
 											<div class="col-md-2 pull-right media-object hsabal-btn hsa_box" style="line-height:70px;">
-												<span id="sliderss-range-max-amount">
-												</span><span>k</span>
+												<span id="sliderss-range-max-amount" id="menuPoor">
+												</span>
 											</div>	
 											
 											<!--hr-->
@@ -579,7 +579,12 @@ Demo.init(); // init demo features
 	   $('li.fil').click(function() {
 		$('li.fil').removeClass('active');
 		$(this).addClass('active');
-		var val = $(this).index(); 												   
+		var val = $(this).index(); 	
+		if(val == 1)
+		{
+			alert("poor");
+			$("#menuPoor").html("Poor");
+		}		
 		});
 		$('li.fil1').click(function() {
 		$('li.fil1').removeClass('active');
@@ -596,7 +601,7 @@ Demo.init(); // init demo features
 <style>
 .active
 {
-background-color:#0099cc !important;
+	background-color:#0099cc !important;
 }
 </style>
 <!-- END JAVASCRIPTS -->
