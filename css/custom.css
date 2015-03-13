@@ -21,39 +21,39 @@ font-size:12px;
 .fundset
 {
 	margin-top: -2% !important;
-background: #ADADAD !important;
 color: white !important;
 /* margin-left: 6%; */
 width: 30% !important;
+background: #1BBC9B !important;
 margin-right: 24px !important;
 border-radius: 2px solid white !important;
-border-radius: 7px !important;
+border-radius: 1px !important;
 height: 35px !important;
 border-color: white !important;
 font-size: 17px !important;
 }
 .calculate-btn {
 	margin-top: -2%;
-	background: #ADADAD !important;
+	background: #1BBC9B !important;
 	color: white !important;
 	/* margin-left: 6%; */
 	width: 18%;
 	margin-right: 126px;
 	border-radius: 2px solid white !important;
-	border-radius: 7px;
+	border-radius: 1px;
 	height: 35px;
 	border-color: white;
 	font-size: 17px !important;
 }
 .back-btn {
 	margin-top: -2%;
-background: #ADADAD !important;
+background: #1BBC9B !important;
 color: white !important;
 /* margin-left: 6%; */
 width: 14%;
 margin-right: 174px;
 border-radius: 2px solid white !important;
-border-radius: 7px;
+border-radius: 1px;
 height: 35px;
 border-color: white;
 font-size: 17px !important;
