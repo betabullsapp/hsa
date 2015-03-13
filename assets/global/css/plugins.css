@@ -1692,8 +1692,9 @@ jQuery UI Sliders(new in v1.1.1)
 /* by designer */
 .ui-slider-horizontal .ui-slider-handle {
   top: -3px;
-  height: 24px;
-width: 20px;
+  height: 16px;
+width: 8%;
+margin:2px 0;
 }
 /* by designer */
 
