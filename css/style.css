@@ -79,3 +79,104 @@ border:none;background-color:#f9f9f9;width:44px !important;
 .white-textbox {
 border:none;background-color:#ffffff;width:44px !important;
 }
+
+
+.hsa-h {
+ color:#A9C14A;font-size:27px;margin-top:4px !important;
+}
+.planner-h {
+ font-size:27px;color:#5DA8A9;margin-top:4px !important;
+}
+.current-table {
+ font-size:11px !important;color:#89D5EC;width:6%;text-align:center !important;
+}
+.allocation-table {
+ font-size:11px !important;color:#83D2A6;width:6%;text-align:center !important;
+}
+.th-width {
+ width:6% !important;
+}
+.td-padd {
+ padding:35px 0 !important;
+}
+.table-height {
+ height:456px;overflow:auto;font-size:11px !important;
+}
+.savings-label {
+ background-color:orange;padding-left:12px !important;border-radius:5px !important;
+}
+.fixed-label {
+ background-color:red;padding-left:12px !important;border-radius: 5px !important;
+}
+.national-label {
+ background-color:#DFBA49;padding-left:12px !important;border-radius: 5px !important;
+}
+.small-label {
+ background-color:#89c4f4;padding-left:12px !important;border-radius: 5px !important;
+}
+.large-label {
+ background-color:green;padding-left:12px !important;border-radius: 5px !important;
+}
+.hsa-right {
+ font-weight:500;text-align:right;margin-right:2% !important;
+}
+.orange {
+ color:orange !important;
+}
+.red {
+ color:red !important;
+}
+.li-orange {
+ color:#DFBA49 !important;
+}
+.blue {
+ color:#89c4f4 !important;
+}
+.btn-width {
+ width:100% !important;
+}
+.cbal {
+	color:#fff !important;
+	font-size:16px !important;
+}
+.pchart {
+	margin-top:-20px !important;
+}
+.allocation {
+	margin-left:20px !important;
+	color:white !important;
+}
+.labeltext {
+	background-color:green !important;
+	padding-left:12px !important;
+	border-radius: 5px !important;
+}
+.smallcap {
+	background-color:#89c4f4 !important;
+	padding-left:12px !important;
+	border-radius: 5px !important;
+}
+.inter {
+	background-color:#DFBA49 !important;
+	padding-left:12px !important;
+	border-radius: 5px !important;
+}
+.fincome {
+	background-color:red !important;
+	padding-left:12px !important;
+	border-radius: 5px !important;
+}
+.sacc {
+	background-color:orange !important;
+	padding-left:12px !important;
+	border-radius: 5px !important;
+}
+.tbar {
+	background-color:white !important;
+}
+.pcontent {
+	margin-top:5% !important;
+}
+.rebal {
+	margin-left: 7% !important;
+}

@@ -1,26 +1,106 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>HSA Planner</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta content="" name="description"/>
-<meta content="" name="author"/>
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>HSAPlanner - HSA Asset Allocation Calculator</title>
+  <meta name="description" content="">
+  <meta name="author" content="Devenir">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="./css/custom.css" rel="stylesheet" type="text/css"/>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="http://hsaplanner.com/hsaplanner/hsaalloccalc/css/custom-theme/jquery-ui-1.8.16.custom.css"> 
+   <link rel="stylesheet" href="http://hsaplanner.com/hsaplanner/hsaalloccalc/css/ui.css">
+<!--  <link  href="./assets/admin/layout/css/jquery-ui-1.8.16.custom.css">
+ <link href="./assets/admin/layout/css/ui.css" /> -->
+  <!-- JS -->
+   <script src="./ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	
+ <script type="text/javascript" src="js/swfobject.js"></script>
+
+  <script type="text/javascript">
+  var newAllocation;
+  var isMobile = false;
+  $(function(){
+		var pieValues = ["15|0|5|50|30", "25|5|10|50|10", "35|10|15|35|5", "45|15|20|15|5", "50|20|25|0|5"];
+		var val = 0;
+		
+		var flashvars = {
+			pieColors:"#27a648|#72b6ea|#efb63b|#e76d35|#aa6dc9",
+			pieValues:"15|0|5|50|30"
+		};
+		var params = {
+			wmode:"transparent"
+		};
+		
+	swfobject.embedSWF("swf/piechart.swf", "flashContent", "316", "316", "9.0.0", "expressInstall.html", flashvars, params, {id:"flashMovieContent", name: "flashMovie"});
+
+		function getFlashMovieObject(movieName){
+			if (window.document[movieName]){
+				return window.document[movieName];
+			}
+			if (navigator.appName.indexOf("Microsoft Internet")==-1){
+				if (document.embeds && document.embeds[movieName])
+					return document.embeds[movieName];
+			}
+			else{
+				return document.getElementById(movieName);
+			}
+		}
+		
+		function drawPie(str){
+			var flashMovie=getFlashMovieObject("flashMovie");
+			flashMovie.drawPie(str);
+		}
+		
+		$(function() {
+			$('#calc').click(function() {
+				if(newAllocation == true){ //If allocation is different to the last one then animate pie chart.
+					drawPie(pieValues[arrayValue]);
+				}
+			});
+		});
+	});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1179644-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  
+  <!--[if lt IE 9]>
+ <link rel="stylesheet" href="css/ie.css">
+ <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><link rel="stylesheet" href="css/ie7.css"><![endif]-->
+  <script type="text/javascript" src="http://hsaplanner.com/hsaplanner/hsaalloccalc/js/swfobject.js"></script>
+
+  <!-- JS -->
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+ 
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 <link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 <link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-<link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
 <link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="./assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <link href="./assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
 <!-- BEGIN THEME STYLES -->
-<link href="./assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="./css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="./assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
 <link id="style_color" href="./assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
@@ -30,420 +110,233 @@
 <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
-<link href="./css/style.css" rel="stylesheet" type="text/css"/>
-<link href="./css/fundallocations.css" rel="stylesheet" type="text/css"/>
-<link href="./css/custom.css" rel="stylesheet" type="text/css"/>
+
+
+  <!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css">
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><link rel="stylesheet" href="css/ie7.css"><![endif]-->
+  <!-- <script type="text/javascript" src="http://hsaplanner.com/hsaplanner/hsaalloccalc/js/swfobject.js"></script> -->
+ 
+  
+
 </head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
-<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
-<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
-<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
-<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
-<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
-<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
-<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
-<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-reversed">
-<!-- BEGIN HEADER -->
-<div class="page-header navbar navbar-fixed-top">
+
+<body class="page-header-fixed " >
+	<div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="index.html">
-			<h2 style="color:white;margin-top:4px !important">HSA Planner</h2>
+			<a href="index.html" style="text-decoration:none">
+			<h2 class="pheaderhsa">HSA <span class="plannerheader">Planner</span></h2>
 			</a>
-			<div class="menu-toggler sidebar-toggler hide">
-				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-			</div>
+			
 		</div>
 		<!-- END LOGO -->
 		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
-		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
-		</a>
+		
 		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN TOP NAVIGATION MENU -->
-		<div class="top-menu">
-			<ul class="nav navbar-nav pull-right">
-				
-				<!-- END QUICK SIDEBAR TOGGLER -->
-			</ul>
-		</div>
+		
 		<!-- END TOP NAVIGATION MENU -->
 	</div>
 	<!-- END HEADER INNER -->
 </div>
-<!-- END HEADER -->
 <div class="clearfix">
 </div>
-<!-- BEGIN CONTAINER -->
-<div class="page-container">
-	<!-- BEGIN SIDEBAR -->
-	
-	<!-- END SIDEBAR -->
-	<!-- BEGIN CONTENT -->
-	<div class="">
-		<div class="page-content">
-					<div class="container">
-						<div class="col-md-12">
-							
-							 <!-- <h3 class="page-title">
-					What do you like to do today <small>Rebalance account</small>
-					</h3> -->
-					<div class="page-bar">
+  <div class="" >
+		<div id="" class="page-content">
+											
+			<div class="container">
+			<div class="col-md-12">
+			<div class="row">
+			<div class="col-md-6">
+			<div id="content">
+			<div id="sliders" class="slider-table"  >
+				<div id="inputs">
+				<section min=18 max=100>
+					<div class="info">
+						<h3>Age<a class="helpBtn">i</a></h3>
+						<p class="amount"><span class="hl"></span><span class="output">55</span></p>
+					</div>
+					<div class="slider"></div>
+					<p class="help"><b>Age</b>Your current age<span class="closeHelp">x</span></p>
+				</section>
+
+				<section min=0 max=100>
+					<div class="info">
+						<h3>Current HSA Balance<a class="helpBtn">i</a></h3>
+						<p class="amount"><span class="hl"></span><span class="output">5</span>k</p>
+					</div>
+					<div class="slider"></div>
+					<p class="help"><b>Current HSA Balance</b>The current account balance in your health savings account including any invested balances.<span class="closeHelp">x</span></p>
+				</section>
+				
+				<section min=0 max=10>
+					<div class="info">
+						<h3>Anticipated Annual HSA Contributions<a class="helpBtn">i</a></h3>
+						<p class="amount"><span class="hl"></span><span class="output">2</span>k</p>
+					</div>
+					<div class="slider"></div>
+					<p class="help"><b>Anticipated Annual HSA Contributions</b>Expected annual dollar contributions to your HSA based on either individual or family policy.<span class="closeHelp">x</span></p>
+				</section>
+				
+				<section class="radio">
+					<div class="info">
+						<h3><span>General Health</span><a class="helpBtn" alt="Please choose the description below which most closely represents your current state of health.">i</a></h3>
+						<p class="amount"><span class="hl"></span><span class="output">Average</span></p>
+					</div>	
+
+					<div class="radioBtns">
+						<a alt="Chronic medical condition or have a strong family history of chronic diseases, overweight, smoke regularly, don�t exercise, poor dietary habits, and do not utilize preventative medicine.">Poor</a>
+						<a alt="Chronic medical condition under control, family history of chronic diseases, slightly overweight, and get little exercise.">Fair</a>
+						<a class="selected" alt="No chronic medical condition, try to exercise and eat healthy when possible but often do not.">Average</a>
+						<a class="twolines" alt="Little family history of chronic medical conditions, frequently exercise and have good dietary habits.">Above Average</a>
+						<a alt="Live an active lifestyle with regular exercise, follow recommended dietary guidelines, and regularly utilize preventive medical services.">Excellent</a>
+					</div>
 						
+					<p class="help"></p>
+				</section>
+				
+				<section min=0 max=25>
+					<div class="info">
+						<h3>Estimated Annual OOP Healthcare Costs<a class="helpBtn">i</a></h3>
+						<p class="amount"><span class="hl"></span><span class="output">6</span>k</p>
+					</div>
+					<div class="slider"></div>
+					<p class="help"><b>Estimated Annual Out of Pocket Medical Expenses (Medical + Perscriptions - less Insurance Payments)</b>The approximate dollar amount you spend out of your own pocket on medical expenses not covered by insurance on an annual basis, i.e. preventative care, immunizations, medications, etc.<span class="closeHelp">x</span></p>
+				</section>
+				
+				<section class="radio">
+					<div class="info">
+						<h3>Risk tolerance</h3>
+						<p class="amount"><span class="hl"></span><span class="output ">Low</span></p>
+					</div>	
+
+					<div class="radioBtns">
+						<a class="selected" alt="I am very concerned about my investments losing value and would sell quickly if my investments lose value.">Low</a>
+						<a class="twolines" alt="Daily market fluctuations concern me, but I tend not to overreact.  If my investment loses 5% or more over a quarter, I would sell.">Fairly Low</a>
+						<a alt="I am equally concerned about my investments losing or gaining value.  I am comfortable with taking some risk, but am also comfortable with giving up some return in exchange for excessive risk.">Average</a>
+						<a class="twolines" alt="I understand that daily changes in the markets can fluctuate significantly.  If market conditions result in 20-30% losses in a year, I would continue to hold my investments for the long-term.">Fairly High</a>
+						<a alt="My primary goal is for my investment to gain value.  If market conditions resulted in losses of 30-40% in a year, I would stick with my long-term investment plan and would likely add to my investment.">High</a>
+					</div>
 						
-					</div>
-					<!-- END PAGE HEADER-->
-					<!-- BEGIN DASHBOARD STATS -->
-					
-					<!-- END DASHBOARD STATS -->
-					<div class="clearfix">
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-									<!-- BEGIN CHART PORTLET-->
-									<div class="portlet light bordered " style="height:642px">
-										<div class="portlet-title">
-											<div class="caption">
-											<i class="icon-bar-chart font-green-haze"></i>
-												
-												<span class="font-green-haze">HSA Asset Allocations Calculator </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											</div>
-										</div>
-										<div class="portlet-body body-height" >
-											<div class="col-md-2 pull-right media-object hsa-btn hsa_box" >
-												<span id="slider-range-max-amount">
-												</span>
-											</div>	
-											<div class="form-group well age-sli space hsa_box">
-												<label class="col-md-4 control-label menu-font hsa_box">Age</label>
-												<div class="col-md-10" style="margin-top:-10px">
-													<span id="slider-range-max" class="slider age-slider" >
-													</span>  													
-												</div>
-											</div>
-											
-											<div class="col-md-2 pull-right media-object hsabal-btn hsa_box" >
-												<span id="sliders-range-max-amount">
-												</span><span>k</span>
-											</div>	
-											<div class="form-group well hsa-box space hsa_box">
-												<label class="col-md-4 control-label menu-font hsa_box">HSA Balance</label>
-												<div class="col-md-10" style="margin-top:-10px">
-													<span id="sliders-range-max" class="slider age-slider" >
-													</span>  													
-												</div>
-												
-											</div>
-											<div class="col-md-2 pull-right media-object hsabal-btn hsa_box" >
-												<span id="sliderss-range-max-amount">
-												</span><span>k</span>
-											</div>	
-											<div class="form-group well age-sli space hsa_box" >
-												<label class="col-md-8 control-label menu-font hsa_box">Anticipated Annual HSA Contribution</label>
-												<div class="col-md-10" style="margin-top:-10px">
-													<span id="sliderss-range-max" class="slider age-slider" >
-													</span>  													
-												</div>
-												
-											</div>
-											
-																					
-											<!--div class="form-group well" style="min-height:87px;padding-top:10px; border: solid 1px; border-color:#C3C2C2;background-color:#fff; font-size:12px;">
-												<label class="col-md-4 control-label">Age</label>
-												<div class="col-md-10">
-												
-													<div id="spinner4">
-														<div class="input-group" style="width:100%;">
-															<div class="spinner-buttons input-group-btn">
-																<button type="button" class="btn spinner-up blue" id="add">
-																	<i class="fa fa-plus"></i>
-																</button>		
-															</div>
-															<input type="text" class="spinner-input form-control" maxlength="3" readonly="" value="50" id="val" style="border: solid 1px;">
-															<div class="spinner-buttons input-group-btn">
-																<button type="button" class="btn spinner-down red">
-																	<i class="fa fa-minus"></i>
-																</button>
-															</div>
-														</div>
-													</div>
-																										
-												</div>
-											</div-->
-											<!--div class="clearfix"></div>
-											<hr-->
-											
-											
-											<!--div class="clearfix"></div>
-											<hr-->
-												
-											
-											<div class="col-md-2 pull-right media-object hsabal-btn hsa_box" style="line-height:70px;">
-												<span id="sliderss-range-max-amount" id="menuPoor">
-												</span>
-											</div>	
-											
-											<!--hr-->
-											<div class="form-group well menu-height age-sli space hsa_box" style="height:71px !important">
-												<label class="col-md-10 control-label menu-font hsa_box">General Health</label>
-												<div class="col-md-10 ">
-												
-													<!--<button type="button" class="btn btn-info">Poor</button>
-													<button type="button" class="btn btn-info">Fair</button>
-													<button type="button" class="btn btn-info">Average</button>
-													<button type="button" class="btn btn-info">Above Average</button>
-													<button type="button" class="btn btn-info">Excellent</button>-->
-													
-													<ul class="mix-filter fil btn-menu-font ">
-														<li class="filter fil icon-radius btnbrowser"  data-filter="all"  style="height:44px;width: 62px !important;">
-															 Poor
-														</li>
-														<li class="filter fil active icon-radius btnbrowser" data-filter="category_1"  style="height:44px;width: 62px !important;">
-															 Fair
-														</li>
-														<li class="filter fil icon-radius btnbrowser" data-filter="category_2"  style="height:44px;width: 62px !important;">
-															 Average
-														</li>
-														<li class="filter fil icon-radius btnbrowser" data-filter="category_3">
-															 Above Average
-														</li>
-														<li class="filter fil icon-radius btnbrowser" data-filter="category_3 category_1"  style="height:44px;width: 62px !important;">
-															 Excellent
-														</li>
-													</ul>
-													
-													
-												</div>
-												
-											</div>
-											
-											<!--hr-->
-											<div class="col-md-2 pull-right media-object hsa-btn hsa_box" style="margin-top:-11px">
-												<span id="sliderssu-range-max-amount">
-												</span><span>k</span>
-											</div>	
-											<div class="form-group well age-sli space hsa_box" style="margin-top:-11px">
-												<label class="col-md-8 control-label menu-font hsa_box" style="margin-top:-5px;">Anticipated Annual HSA Contribution</label>
-												<div class="col-md-10" style="margin-top:-10px">
-													<span id="sliderssu-range-max" class="slider age-slider" >
-													</span>  													
-												</div>
-												
-											</div>
-											
-											
-											
-											
-											<!--hr-->
-											<div class="col-md-2 pull-right media-object hsa-btn hsa_box" style="margin-top:-1px;line-height:69px" >
-												<span id="sliderssu-range-max-amount">
-												</span><span>k</span>
-											</div>
-												<div class="form-group well menu-height-risk age-sli space hsa_box" style="margin-top:-2px;height:71px !important" >
-												<label class="col-md-10 control-label menu-font hsa_box">Risk tolerances</label>
-												<div class="col-md-10 ">
-												
-													<!--<button type="button" class="btn btn-info">Low</button>
-													<button type="button" class="btn btn-info">Fairly Low</button>
-													<button type="button" class="btn btn-info">Average</button>
-													<button type="button" class="btn btn-info">Fairly High</button>
-													<button type="button" class="btn btn-info">High</button>-->
-													
-													<ul class="mix-filter fil1">
-														<li class="filter fil1 icon-radius btnbrowser" data-filter="all" value="Poor"  style="height:44px;width: 62px !important;">
-															 Low
-														</li>
-														<li class="filter fil1 icon-radius btnbrowser" data-filter="category_1">
-															 Fairly Low
-														</li>
-														<li class="filter fil1 active icon-radius btnbrowser" data-filter="category_2" style="height:44px;width: 62px !important;">
-															 Average
-														</li>
-														<li class="filter fil1 icon-radius btnbrowser" data-filter="category_3">
-															 Fairly High
-														</li>
-														<li class="filter fil1 icon-radius btnbrowser" data-filter="category_3 category_1"  style="height:44px;width: 62px !important;">
-															 High
-														</li>
-													</ul>
-													
-													
-												</div>
-											</div>
-											<div class="clearfix"></div>
-											<!--hr-->	
-											<div class="col-md-2 pull-right media-object hsa-btn hsa_box" style="margin-top:-8px;line-height:70px">
-												<span id="sliderssu-range-max-amount">
-												</span><span>k</span>
-											</div>
-											
-											<div class="form-group well menu-height age-sli space hsa_box" style="margin-top:-9px;height:71px !important" >
-												<label class="col-md-10 control-label menu-font hsa_box" style="margin-top:-8px">Economic outlook</label>
-												<div class="col-md-10 " style="margin-top:-5px">
-												
-													<!--<button type="button" class="btn btn-info">Negative</button>
-													<button type="button" class="btn btn-info">Slow Growth</button>
-													<button type="button" class="btn btn-info">Fairly Growth</button>
-													<button type="button" class="btn btn-info ">Highly Growth</button>-->
-													
-													<ul class="mix-filter fil2">
-														<li class="filter fil2 icon-radius btnbrowser" data-filter="all" style="margin-top: 2px !important;height:44px;width: 62px !important;">
-															 Negative
-														</li>
-														<li class="filter fil2 icon-radius btnbrowser" data-filter="category_1" style="margin-top: 2px !important;;width: 62px !important;">
-															 Slow Growth
-														</li>
-														<li class="filter fil2 active icon-radius btnbrowser" data-filter="category_2" style="margin-top: 2px !important;;width: 62px !important;">
-															 Fairly Growth
-														</li>
-														<li class="filter fil2 icon-radius btnbrowser" data-filter="category_3" style="margin-top: 2px !important;;width: 62px !important;">
-															 Highly Growth
-														</li>
-														
-													</ul>
-													
-													
-													
-												</div>
-											</div>
-											
-											<div class="clearfix"></div>
-											<span class="btn  btn-success btn-default pull-right"><i class="fa fa-calculator"  style="color:white"></i>Calculate</span>
-											<!--hr-->										
-										</div>
-									</div>
-									<!-- END CHART PORTLET-->
-								</div>
-								<div class="col-md-6">
-									<!-- BEGIN CHART PORTLET-->
-									<div class="portlet light bordered">
-										
-											
-												
-												<span class="caption-subject  "></span>
-												
-											
-										
-										<div class="portlet-body">
-											<!--div id="pie_chart_5" class="" style="height:300px;width:300px"></div-->
-											<div id="pie_chart_1" class="chart" style="padding: 0px; position: relative;"><canvas class="flot-base" width="480" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 480px; height: 300px;"></canvas><canvas class="flot-overlay" width="480" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 480px; height: 300px;"></canvas><span class="pieLabel" id="pieLabel0" style="position: absolute; top: 11px; left: 272px;"><div style="font-size:x-small;text-align:center;padding:2px;color:rgb(237,194,64);">Vanguard<br>14%</div></span><span class="pieLabel" id="pieLabel1" style="position: absolute; top: 194px; left: 343px;"><div style="font-size:x-small;text-align:center;padding:2px;color:rgb(175,216,248);">Fiedility<br>37%</div></span><span class="pieLabel" id="pieLabel2" style="position: absolute; top: 263px; left: 183px;"><div style="font-size:x-small;text-align:center;padding:2px;color:rgb(203,75,75);">HSBC<br>9%</div></span><span class="pieLabel" id="pieLabel3" style="position: absolute; top: 95px; left: 84px;"><div style="font-size:x-small;text-align:center;padding:2px;color:rgb(77,167,77);">BlackRock<br>41%</div></span></div>
-										</div>
-									</div>
-										
-								</div>
-									<!-- END CHART PORTLET-->
-								
-								<div class="col-md-6">
-									<!-- BEGIN CHART PORTLET-->
-									<div class="portlet light bordered ptbody" style="margin-top:-18px">
-						<div class="portlet-title portallocations" >
-							<div class="caption">
-								
-								<span class="font-green-haze ptext" style="margin-left:20px;color:white !important" > Allocations</span>
-							</div>
-							
-						</div>
-						<div class="portlet-body portchartbody" >
-							<div class="table-scrollable">
-										<table class="table table-striped ">
-										<!-- <thead>
-										<th class="portlet-title  font-green-haze">
-										Resulting Allocations
-										</th>
-										</thead> -->
-										<tbody>
-										<tr>
-											<td class="font-green-haze">
-												 <span class="label label-sm label-danger" style="background-color:green;padding-left:12px;border-radius: 5px !important;">
-												 </span> &nbsp;&nbsp;Large-Cap Equity
-											</td>
-											
-											<td class="font-blue-haze">
-												<span style="color:green">
-												 25%</span>
-											</td>
-										</tr>
-										<tr>
-											<td style="color:#89c4f4">
-												  <span class="label label-sm label-danger" style="background-color:#89c4f4;padding-left:12px;border-radius: 5px !important;">
-												 </span> &nbsp;&nbsp;Small/Mid-Cap Equity
-											</td>
-											
-											<td>
-												<span style="color:#89c4f4">
-												5% </span>
-											</td>
-										</tr>
-										<tr>
-											<td style="color:#DFBA49">
-												 <span class="label label-sm label-danger" style="background-color:#DFBA49;padding-left:12px;border-radius: 5px !important;">
-												 </span>&nbsp; &nbsp;International
-											</td>
-											
-											<td>
-												<span style="color:#DFBA49">
-												10% </span>
-											</td>
-										</tr>
-										<tr>
-										
-											<td style="color:red">
-												 <span class="label label-sm label-danger" style="background-color:red;padding-left:12px;border-radius: 5px !important;">
-												 </span> &nbsp;&nbsp;Fixed Income
-											</td>
-											
-											<td>
-												<span style="color:red">
-												50% </span>
-											</td>
-										</tr>
-										<tr>
-											<td style="color:orange">
-												<span class="label label-sm label-danger" style="background-color:orange;padding-left:12px;border-radius: 5px !important;">
-												 </span> &nbsp;&nbsp;Savings Account
-											</td>
-											
-											<td>
-												<span style="color:orange" >
-												10% </span>
-											</td>
-										</tr>
-										</tbody>
-										</table>
-									</div>
-						</div>
-					</div>
-									<!-- END CHART PORTLET-->
-									<a href="Myallocations.html" type="button" class="btn green-meadow">Set My Allocations</a>
-								</div>
-						
-					</div>
-					<br/>
-					<div class="clearfix">
+					<p class="help"></p>
+				</section>
+				
+				<section class="radio">
+					<div class="info">
+						<h3><span>Economic outlook</span><a class="helpBtn" alt="Describe your personal view of the economy going forward and where you see it headed over the time you plan to invest in your HSA.">i</a></h3>
+						<p class="amount"><span class="hl"></span><span class="output">Negative</span></p>
 					</div>
 					
-					<!-- END PAGE CONTENT-->
+					<div class="radioBtns">
+						<a class="selected" alt="Perceive no economic growth.">Negative</a>
+						<a class="twolines" alt="Perceive slight economic growth.">Slower Growth</a>
+						<a class="twolines" alt="Perceive the economy to grow at a moderate pace in the intermediate future.">Average Growth</a>
+						<a class="threelines" alt="Perceive the economy to grow at a higher rate over a prolonged period of time.">Above Average Growth</a>
+					</div>
+				</section>
+					<!-- <section class="radio">
+					<div class="radioBtns">
+						<a class="btn btn-default " style="width: 27%;display:none;
+font-size: 14px;
+margin: 0 100%;">Calculate</a>
+					</div>
+				</section> --> 
+				
 				</div>
-			</div>
-		</div>
-	</div>
-<div class="page-footer">
+				
+				<div class="col-lg-6">
+				<div id="pie_chart_1" class="chart" style="margin:-2% 4%;">
+										</div>
+										
+								</div>
+								<div class="col-lg-6">
+				<div id="" class="chart" >
+				<div class="result-table" >
+						
+						<div id="allocations">
+						<h2>Resulting Allocations</h2>
+						<table id="chartData">
+							<tbody><tr class="green" desc="0">
+							  <td ><span></span><u>Large-Cap Equity</u></td>
+							  <td><b>15</b>%</td>
+							</tr>
+
+							<tr class="blue dark" desc="1">
+							  <td ><span></span><u>Small/Mid-Cap Equity</u></td>
+							  <td><b>0</b>%</td>
+							</tr>
+
+							<tr class="yellow" desc="2">
+							  <td ><span></span><u>International</u></td>
+							  <td><b>5</b>%</td>
+							</tr>
+
+							<tr class="orange dark" desc="3">
+							  <td ><span></span><u>Fixed Income</u></td>
+							  <td><b>50</b>%</td>
+							</tr>
+
+							<tr class="purple" desc="4" style="border-bottom-style: none;">
+							  <td ><span></span><u>Savings Account</u></td>
+							  <td><b>30</b>%</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+				
+										</div>
+										<button class="btn btn-default form-group  pull-right fundset" id="myallocations" type="button">Set My Allocations</button>
+<button class="btn btn-default form-group calculate-btn  pull-right" type="button">Calculate</button>
+<button class="btn btn-default form-group back-btn  pull-right" id="back" type="button">Back</button>
+								</div>
+								 
+								
+					</div>
+				
+				</div>
+				
+				
+								</div>
+								
+								</div>
+				</div>
+				</div>
+				</div>
+				
+		</div><!-- End content -->
+			
+   
+  </div><!-- end of wrapper -->
+ <div class="page-footer">
 	<div class="page-footer-inner">
-		
 		&copy; Copyright 2015 Devenir Group, LLC. All Rights Reserved.
 	</div>
 	<div class="scroll-to-top">
 		<i class="icon-arrow-up"></i>
 	</div>
 </div>
-	
-<!-- extra scripts added for pie charts by Madhan -->
-<script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+  <script defer src="js/jquery.detectflash.js"></script>
+   <script type="text/javascript">  
+    $(document).ready(function() {  
+		if ($.browser.flash == false){
+			$('#flashContent').remove();
+			$('#chart').css('display', 'block');
+		}
+	});
+	</script>
+	<script defer src="js/mobile.js"></script> <!-- Changes hover events to click (for touch screens) if on mobile -->
+	<script defer src="js/chart.js"></script>
+	<script defer src="js/math.js"></script>
+	<script defer src="js/scripts.js"></script>
+	<script src="js/libs/jquery-ui-1.8.16.custom.min.js"></script>
+	<script src="js/jquery.ui.touch-punch.js"></script>
+  
+ <script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>	
 
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
@@ -454,15 +347,9 @@
 <script src="./assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-<script src="./assets/global/plugins/flot/jquery.flot.min.js"></script>
-<script src="./assets/global/plugins/flot/jquery.flot.resize.min.js"></script>
-<script src="./assets/global/plugins/flot/jquery.flot.pie.min.js"></script>
 
-<script src="./assets/admin/pages/scripts/components-jqueryui-sliders.js"></script>
-<script src="./assets/admin/pages/scripts/components-nouisliders.js"></script>
+<!-- END CORE PLUGINS -->
+
 
 <script src="./assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="./assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
@@ -478,12 +365,7 @@
 <script type="text/javascript" src="./assets/global/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
 <script src="./assets/global/plugins/bootstrap-pwstrength/pwstrength-bootstrap.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
-<script src="./assets/global/plugins/typeahead/typeahead.bundle.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="./assets/global/plugins/ckeditor/ckeditor.js"></script>
+
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script src="./assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
@@ -501,15 +383,12 @@
 <script src="./assets/global/plugins/flot/jquery.flot.resize.min.js"></script>
 <script src="./assets/global/plugins/flot/jquery.flot.pie.min.js"></script>
 <script src="./assets/global/plugins/flot/jquery.flot.stack.min.js"></script>
-<script src="./assets/admin/pages/scripts/components-jqueryui-sliders.js"></script>
-<script src="./assets/admin/pages/scripts/components-nouisliders.js"></script>
+
 
 <script src="./assets/global/plugins/flot/jquery.flot.crosshair.min.js"></script>
 <script src="./assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 
-<script type="text/javascript" src="./assets/global/plugins/jquery-mixitup/jquery.mixitup.min.js"></script>
-<script type="text/javascript" src="./assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
 
 <script src="./assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="./assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
@@ -518,92 +397,64 @@
 <script src="./assets/admin/pages/scripts/charts-amcharts.js"></script>
 <script src="./assets/admin/pages/scripts/charts-flotcharts.js"></script>
 <script src="./assets/admin/pages/scripts/components-form-tools.js"></script>
-<script src="./assets/admin/pages/scripts/components-jqueryui-sliders.js"></script>
+
 
 <script src="./assets/admin/pages/scripts/portfolio.js"></script>
 
-<script>
-jQuery(document).ready(function() {       
-   // initiate layout and plugins
-   Metronic.init(); // init metronic core components
-Layout.init(); // init current layout
-QuickSidebar.init(); // init quick sidebar
-Demo.init(); // init demo features
-   ChartsAmcharts.init(); 
-    ChartsFlotcharts.init();
-   ChartsFlotcharts.initCharts();
-   ChartsFlotcharts.initPieCharts();
-   ChartsFlotcharts.initBarCharts();// init demo charts
-   ComponentsjQueryUISliders.init();
-	 ComponentsjQueryUIASliders.init();
-	 ComponentsjQueryUIAESliders.init();
-	 ComponentsjQueryUIAESSliders.init();
-});
-</script>
-<script>
-jQuery(document).ready(function() {       
-   // initiate layout and plugins
-   Metronic.init(); // init metronic core components
-Layout.init(); // init current layout
-QuickSidebar.init(); // init quick sidebar
-Demo.init(); // init demo features
-   ChartsAmcharts.init(); 
-    ChartsFlotcharts.init();
-   ChartsFlotcharts.initCharts();
-   ChartsFlotcharts.initPieCharts();
-   ChartsFlotcharts.initBarCharts();// init demo charts
-});
-</script>
-<script>
-        jQuery(document).ready(function() {       
-           // initiate layout and plugins
-           Metronic.init(); // init metronic core components
-		Layout.init(); // init current layout
-		QuickSidebar.init(); // init quick sidebar
-		Demo.init(); // init demo features
-           ComponentsFormTools.init();
-        });   
-</script>
-<script type="text/javascript">
- jQuery(document).ready(function() {   
-        //Hide the overview when click
-        $('#someid').on('click', function () {
-            $('#OverviewcollapseButton').removeClass("collapse").addClass("expand"); 
-            $('#PaymentOverview').hide();
-        });
-    });
-    </script>
+
+<script defer src="http://hsaplanner.com/hsaplanner/hsaalloccalc/js/chart.js"></script>
+
 
 <script>
+jQuery(document).ready(function() {       
+   // initiate layout and plugins
+   Metronic.init(); // init metronic core components
+ // init quick sidebar
+Demo.init(); // init demo features
+   ChartsAmcharts.init(); 
+    ChartsFlotcharts.init();
+   ChartsFlotcharts.initCharts();
+   ChartsFlotcharts.initPieCharts();
+   ChartsFlotcharts.initBarCharts();// init demo charts
+
+});
+</script>
+  <script defer src="js/jquery.detectflash.js"></script>
+   <script type="text/javascript">  
+    $(document).ready(function() {  
+		if ($.browser.flash == false){
+			$('#flashContent').remove();
+			$('#pie_chart_1').css('display', 'block');
+		}
+	});
+	</script>
+<script>
 	$(document).ready(function(){
-	   $('li.fil').click(function() {
-		$('li.fil').removeClass('active');
-		$(this).addClass('active');
-		var val = $(this).index(); 	
-		if(val == 1)
-		{
-			alert("poor");
-			$("#menuPoor").html("Poor");
-		}		
+		$("#myallocations").click(function(){
+			window.location.replace("Myallocations.html");
 		});
-		$('li.fil1').click(function() {
-		$('li.fil1').removeClass('active');
-		$(this).addClass('active');
-		var val = $(this).index(); 											   
-		});
-		$('li.fil2').click(function() {
-		$('li.fil2').removeClass('active');
-		$(this).addClass('active');
-		var val = $(this).index(); 											   
+		
+		$("#back").click(function(){
+			window.location.replace("index.html");
 		});
 	});
 </script>	
+
 <style>
-.active
+<!-- .content
 {
-	background-color:#0099cc !important;
+max-width: 950px;
+min-width: 840px;
+background: #FFFFFF;
+overflow: hidden;
+margin: 0 auto;
+padding: 30px;
 }
+ -->
 </style>
-<!-- END JAVASCRIPTS -->
+
+
+	
+
 </body>
-</html>	
+</html>
