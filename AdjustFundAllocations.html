@@ -159,7 +159,7 @@
 				<section min=18 max=100>
 					<div class="info">
 						<h3>Age<a class="helpBtn">i</a></h3>
-						<p class="amount"><span class="hl"></span><span class="output">55</span></p>
+						<p class="amount"><span class="hl"></span><span class="output" id="age">55</span></p>
 					</div>
 					<div class="slider"></div>
 					<p class="help"><b>Age</b>Your current age<span class="closeHelp">x</span></p>
@@ -291,7 +291,7 @@ margin: 0 100%;">Calculate</a>
 				
 										</div>
 										<button class="btn   pull-right fundset" id="myallocations"  type="button">Set My Allocations</button>
-<button class="btn   calculate-btn  pull-right"  type="button">Calculate</button>
+<button class="btn   calculate-btn  pull-right"  type="button" id="calculate">Calculate</button>
 <button class="btn back-btn pull-right" id="back" type="button">Back</button>
 								</div>
 								 
@@ -454,7 +454,9 @@ padding: 30px;
 </style>
 <script>
 	$(document).ready(function(){
-		
+		$("#calculate").click(function(){
+			//alert($("#age").html());
+		});	
 	});
 </script>
 
