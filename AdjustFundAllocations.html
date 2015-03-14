@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -10,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <link href="favicon.ico" rel="icon" type="image/x-icon" />
-  <link href="./css/custom.css" rel="stylesheet" type="text/css"/>
+  
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="http://hsaplanner.com/hsaplanner/hsaalloccalc/css/custom-theme/jquery-ui-1.8.16.custom.css"> 
    <link rel="stylesheet" href="http://hsaplanner.com/hsaplanner/hsaalloccalc/css/ui.css">
@@ -67,19 +68,7 @@
 		});
 	});
 </script>
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1179644-7']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
   
   <!--[if lt IE 9]>
  <link rel="stylesheet" href="css/ie.css">
@@ -100,7 +89,7 @@
 <!-- END GLOBAL MANDATORY STYLES -->
 <link href="./assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
 <!-- BEGIN THEME STYLES -->
-<link href="./css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="./assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
 <link id="style_color" href="./assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
@@ -119,9 +108,28 @@
   <!--[if lt IE 8]><link rel="stylesheet" href="css/ie7.css"><![endif]-->
   <!-- <script type="text/javascript" src="http://hsaplanner.com/hsaplanner/hsaalloccalc/js/swfobject.js"></script> -->
  
-  
-
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="./assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link href="./css/style.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+#sliders section{
+	width: 100% !important;
+}
+#sliders .info h3{
+	margin: 0;
+}
+.o-h{
+	overflow: hidden;
+}
+</style>
 </head>
+
+
+
 
 <body class="page-header-fixed " >
 	<div class="page-header navbar navbar-fixed-top">
@@ -130,9 +138,11 @@
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="index.html" style="text-decoration:none">
-			<h2 class="pheaderhsa">HSA <span class="plannerheader">Planner</span></h2>
+			<h2 class="pheaderhsa head-text">HSA<span class="plannerheader">Planner</span></h2>
 			</a>
-			
+			<div class="menu-toggler sidebar-toggler hide">
+				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+			</div>
 		</div>
 		<!-- END LOGO -->
 		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -146,174 +156,172 @@
 </div>
 <div class="clearfix">
 </div>
-  <div class="" >
 		<div id="" class="page-content">
 											
-			<div class="container">
-			<div class="col-md-12">
-			<div class="row">
-			<div class="col-md-6">
-			<div id="content">
-			<div id="sliders" class="slider-table"  >
-				<div id="inputs">
-				<section min=18 max=100>
-					<div class="info">
-						<h3>Age<a class="helpBtn">i</a></h3>
-						<p class="amount"><span class="hl"></span><span class="output" id="age">55</span></p>
-					</div>
-					<div class="slider"></div>
-					<p class="help"><b>Age</b>Your current age<span class="closeHelp">x</span></p>
-				</section>
+			<div class="container container-top">
+			
 
-				<section min=0 max=100>
-					<div class="info">
-						<h3>Current HSA Balance<a class="helpBtn">i</a></h3>
-						<p class="amount"><span class="hl"></span><span class="output">5</span>k</p>
-					</div>
-					<div class="slider"></div>
-					<p class="help"><b>Current HSA Balance</b>The current account balance in your health savings account including any invested balances.<span class="closeHelp">x</span></p>
-				</section>
-				
-				<section min=0 max=10>
-					<div class="info">
-						<h3>Anticipated Annual HSA Contributions<a class="helpBtn">i</a></h3>
-						<p class="amount"><span class="hl"></span><span class="output">2</span>k</p>
-					</div>
-					<div class="slider"></div>
-					<p class="help"><b>Anticipated Annual HSA Contributions</b>Expected annual dollar contributions to your HSA based on either individual or family policy.<span class="closeHelp">x</span></p>
-				</section>
-				
-				<section class="radio">
-					<div class="info">
-						<h3><span>General Health</span><a class="helpBtn" alt="Please choose the description below which most closely represents your current state of health.">i</a></h3>
-						<p class="amount"><span class="hl"></span><span class="output">Average</span></p>
-					</div>	
+			
+			<div class="col-lg-6 col-md-6">
+				<div class="portlet light bordered o-h">
+						<div class="portlet-body">
+				<div id="sliders" class=""  >
+					<div id="inputs">
+					<section min=18 max=100>
+						<div class="info">
+							<h3>Age<a class="helpBtn">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">55</span></p>
+						</div>
+						<div class="slider"></div>
+						<p class="help"><b>Age</b>Your current age<span class="closeHelp">x</span></p>
+					</section>
 
-					<div class="radioBtns">
-						<a alt="Chronic medical condition or have a strong family history of chronic diseases, overweight, smoke regularly, don�t exercise, poor dietary habits, and do not utilize preventative medicine.">Poor</a>
-						<a alt="Chronic medical condition under control, family history of chronic diseases, slightly overweight, and get little exercise.">Fair</a>
-						<a class="selected" alt="No chronic medical condition, try to exercise and eat healthy when possible but often do not.">Average</a>
-						<a class="twolines" alt="Little family history of chronic medical conditions, frequently exercise and have good dietary habits.">Above Average</a>
-						<a alt="Live an active lifestyle with regular exercise, follow recommended dietary guidelines, and regularly utilize preventive medical services.">Excellent</a>
-					</div>
-						
-					<p class="help"></p>
-				</section>
-				
-				<section min=0 max=25>
-					<div class="info">
-						<h3>Estimated Annual OOP Healthcare Costs<a class="helpBtn">i</a></h3>
-						<p class="amount"><span class="hl"></span><span class="output">6</span>k</p>
-					</div>
-					<div class="slider"></div>
-					<p class="help"><b>Estimated Annual Out of Pocket Medical Expenses (Medical + Perscriptions - less Insurance Payments)</b>The approximate dollar amount you spend out of your own pocket on medical expenses not covered by insurance on an annual basis, i.e. preventative care, immunizations, medications, etc.<span class="closeHelp">x</span></p>
-				</section>
-				
-				<section class="radio">
-					<div class="info">
-						<h3>Risk tolerance</h3>
-						<p class="amount"><span class="hl"></span><span class="output ">Low</span></p>
-					</div>	
-
-					<div class="radioBtns">
-						<a class="selected" alt="I am very concerned about my investments losing value and would sell quickly if my investments lose value.">Low</a>
-						<a class="twolines" alt="Daily market fluctuations concern me, but I tend not to overreact.  If my investment loses 5% or more over a quarter, I would sell.">Fairly Low</a>
-						<a alt="I am equally concerned about my investments losing or gaining value.  I am comfortable with taking some risk, but am also comfortable with giving up some return in exchange for excessive risk.">Average</a>
-						<a class="twolines" alt="I understand that daily changes in the markets can fluctuate significantly.  If market conditions result in 20-30% losses in a year, I would continue to hold my investments for the long-term.">Fairly High</a>
-						<a alt="My primary goal is for my investment to gain value.  If market conditions resulted in losses of 30-40% in a year, I would stick with my long-term investment plan and would likely add to my investment.">High</a>
-					</div>
-						
-					<p class="help"></p>
-				</section>
-				
-				<section class="radio">
-					<div class="info">
-						<h3><span>Economic outlook</span><a class="helpBtn" alt="Describe your personal view of the economy going forward and where you see it headed over the time you plan to invest in your HSA.">i</a></h3>
-						<p class="amount"><span class="hl"></span><span class="output">Negative</span></p>
-					</div>
+					<section min=0 max=100>
+						<div class="info">
+							<h3>Current HSA Balance<a class="helpBtn">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">5</span>k</p>
+						</div>
+						<div class="slider"></div>
+						<p class="help"><b>Current HSA Balance</b>The current account balance in your health savings account including any invested balances.<span class="closeHelp">x</span></p>
+					</section>
 					
-					<div class="radioBtns">
-						<a class="selected" alt="Perceive no economic growth.">Negative</a>
-						<a class="twolines" alt="Perceive slight economic growth.">Slower Growth</a>
-						<a class="twolines" alt="Perceive the economy to grow at a moderate pace in the intermediate future.">Average Growth</a>
-						<a class="threelines" alt="Perceive the economy to grow at a higher rate over a prolonged period of time.">Above Average Growth</a>
-					</div>
-				</section>
-					<!-- <section class="radio">
-					<div class="radioBtns">
-						<a class="btn btn-default " style="width: 27%;display:none;
-font-size: 14px;
-margin: 0 100%;">Calculate</a>
-					</div>
-				</section> --> 
-				
-				</div>
-				
-				<div class="col-lg-6">
-				<div id="pie_chart_1" class="chart" style="margin:-2% 4%;">
-										</div>
-										
-								</div>
-								<div class="col-lg-6">
-				<div id="" class="chart" >
-				<div class="result-table" >
+					<section min=0 max=10>
+						<div class="info">
+							<h3>Anticipated Annual HSA Contributions<a class="helpBtn">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">2</span>k</p>
+						</div>
+						<div class="slider"></div>
+						<p class="help"><b>Anticipated Annual HSA Contributions</b>Expected annual dollar contributions to your HSA based on either individual or family policy.<span class="closeHelp">x</span></p>
+					</section>
+					
+					<section class="radio" >
+						<div class="info">
+							<h3><span>General Health</span><a class="helpBtn" alt="Please choose the description below which most closely represents your current state of health.">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">Average</span></p>
+						</div>	
+
+						<div class="radioBtns">
+							<a class="radio-a" alt="Chronic medical condition or have a strong family history of chronic diseases, overweight, smoke regularly, don�t exercise, poor dietary habits, and do not utilize preventative medicine." style="">Poor</a>
+							<a class="radio-a" alt="Chronic medical condition under control, family history of chronic diseases, slightly overweight, and get little exercise." >Fair</a>
+							<a class="selected radio-a" alt="No chronic medical condition, try to exercise and eat healthy when possible but often do not." >Average</a>
+							<a class="twolines radio-a" alt="Little family history of chronic medical conditions, frequently exercise and have good dietary habits." >Above Average</a>
+							<a class="radio-a" alt="Live an active lifestyle with regular exercise, follow recommended dietary guidelines, and regularly utilize preventive medical services." >Excellent</a>
+						</div>
+							
+						<p class="help"></p>
+					</section>
+					
+					<section min=0 max=25>
+						<div class="info">
+							<h3>Estimated Annual OOP Healthcare Costs<a class="helpBtn">i</a></h3>
+							<p class="amount"><span class="hl"></span><span class="output">6</span>k</p>
+						</div>
+						<div class="slider"></div>
+						<p class="help"><b>Estimated Annual Out of Pocket Medical Expenses (Medical + Perscriptions - less Insurance Payments)</b>The approximate dollar amount you spend out of your own pocket on medical expenses not covered by insurance on an annual basis, i.e. preventative care, immunizations, medications, etc.<span class="closeHelp">x</span></p>
+					</section>
+					
+					<section class="radio" >
+						<div class="info">
+							<h3>Risk tolerance</h3>
+							<p class="amount"><span class="hl"></span><span class="output ">Low</span></p>
+						</div>	
+
+						<div class="radioBtns">
+							<a class="selected radio-a" alt="I am very concerned about my investments losing value and would sell quickly if my investments lose value." >Low</a>
+							<a class="twolines fairly" alt="Daily market fluctuations concern me, but I tend not to overreact.  If my investment loses 5% or more over a quarter, I would sell." >Fairly Low</a>
+							<a class="radio-a" alt="I am equally concerned about my investments losing or gaining value.  I am comfortable with taking some risk, but am also comfortable with giving up some return in exchange for excessive risk." >Average</a>
+							<a class="twolines fairly-high radio-a" alt="I understand that daily changes in the markets can fluctuate significantly.  If market conditions result in 20-30% losses in a year, I would continue to hold my investments for the long-term." >Fairly High</a>
+							<a class="radio-a" alt="My primary goal is for my investment to gain value.  If market conditions resulted in losses of 30-40% in a year, I would stick with my long-term investment plan and would likely add to my investment." >High</a>
+						</div>
+							
+						<p class="help"></p>
+					</section>
+					
+					<section class="radio" >
+						<div class="info">
+							<h3><span>Economic outlook</span><a class="helpBtn" alt="Describe your personal view of the economy going forward and where you see it headed over the time you plan to invest in your HSA.">i</a></h3>
+							<p class="amount"><span class="h1"></span><span class="output">Negative</span></p>
+						</div>
 						
-						<div id="allocations">
-						<h2>Resulting Allocations</h2>
-						<table id="chartData">
+						<div class="radioBtns" >
+							<a class="selected radio-a" alt="Perceive no economic growth." >Negative</a>
+							<a class="twolines radio-a" alt="Perceive slight economic growth." >Slower Growth</a>
+							<a class="twolines radio-a" alt="Perceive the economy to grow at a moderate pace in the intermediate future." >Average Growth</a>
+							<a class="threelines average-growth" alt="Perceive the economy to grow at a higher rate over a prolonged period of time." >Above Average Growth</a>
+						</div>
+					</section>
+					<button class="btn btn-default pull-left" id="back" >
+					 <i class="fa fa-arrow-left calculate-i" ></i>&nbspBack 
+					</button>
+					<button class="btn btn-default pull-right" id="calculate" >Calculate &nbsp <i class="fa fa-caret-right calculate-i" ></i></button>
+					</div>
+					</div></div>
+					</div>
+				</div>
+
+
+					<div class="col-lg-6 col-md-6">
+						<div class="portlet light bordered o-h portlet-pad" >
+						<div class="portlet-body">
+							<div id="pie_chart_1" class="chart" >
+							</div>
+							<div style="height:15px"></div>
+					 <div id="" class="chart" >
+						<div class="table-result" >
+							
+							<div id="allocations">
+							<h2 style="margin:0;">Resulting Allocations</h2>
+							<table id="chartData">
 							<tbody><tr class="green" desc="0">
-							  <td ><span></span><u>Large-Cap Equity</u></td>
-							  <td><b>15</b>%</td>
-							</tr>
+								  <td ><span></span><u>Large-Cap Equity</u></td>
+								  <td><b>15</b>%</td>
+								</tr>
 
-							<tr class="blue dark" desc="1">
-							  <td ><span></span><u>Small/Mid-Cap Equity</u></td>
-							  <td><b>0</b>%</td>
-							</tr>
+								<tr class="blue dark" desc="1">
+								  <td ><span></span><u>Small/Mid-Cap Equity</u></td>
+								  <td><b>0</b>%</td>
+								</tr>
 
-							<tr class="yellow" desc="2">
-							  <td ><span></span><u>International</u></td>
-							  <td><b>5</b>%</td>
-							</tr>
+								<tr class="yellow" desc="2">
+								  <td ><span></span><u>International</u></td>
+								  <td><b>5</b>%</td>
+								</tr>
 
-							<tr class="orange dark" desc="3">
-							  <td ><span></span><u>Fixed Income</u></td>
-							  <td><b>50</b>%</td>
-							</tr>
+								<tr class="orange dark" desc="3">
+								  <td ><span></span><u>Fixed Income</u></td>
+								  <td><b>50</b>%</td>
+								</tr>
 
-							<tr class="purple" desc="4" style="border-bottom-style: none;">
-							  <td ><span></span><u>Savings Account</u></td>
-							  <td><b>30</b>%</td>
-							</tr>
-						</tbody></table>
+								<tr class="purple" desc="4" style="border-bottom-style: none;">
+								  <td ><span></span><u>Savings Account</u></td>
+								  <td><b>30</b>%</td>
+								</tr>
+							</tbody></table>
+						
+					
+						</div>
+						<button class="btn btn-default pull-right" id="setallocations" >Set My Allocations</button>
 					</div>
+									
+									 
+									
 				</div>
+			</div>
 				
-										</div>
-										<button class="btn   pull-right fundset" id="myallocations"  type="button">Set My Allocations</button>
-<button class="btn   calculate-btn  pull-right"  type="button" id="calculate">Calculate</button>
-<button class="btn back-btn pull-right" id="back" type="button">Back</button>
-								</div>
-								 
+				
 								
-					</div>
-				
-				</div>
-				
-				
-								</div>
+		  </div>				
 								
-								</div>
-				</div>
-				</div>
-				</div>
+				
+		</div><!-- End content -->
 				
 		</div><!-- End content -->
 			
    
   </div><!-- end of wrapper -->
- <div class="page-footer">
+  <div class="page-footer" style="background:black !important">
 	<div class="page-footer-inner">
+		
 		&copy; Copyright 2015 Devenir Group, LLC. All Rights Reserved.
 	</div>
 	<div class="scroll-to-top">
@@ -321,6 +329,7 @@ margin: 0 100%;">Calculate</a>
 	</div>
 </div>
   <script defer src="js/jquery.detectflash.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
    <script type="text/javascript">  
     $(document).ready(function() {  
 		if ($.browser.flash == false){
@@ -329,12 +338,20 @@ margin: 0 100%;">Calculate</a>
 		}
 	});
 	</script>
-	<script defer src="js/mobile.js"></script> <!-- Changes hover events to click (for touch screens) if on mobile -->
-	<script defer src="js/chart.js"></script>
-	<script defer src="js/math.js"></script>
-	<script defer src="js/scripts.js"></script>
-	<script src="js/libs/jquery-ui-1.8.16.custom.min.js"></script>
-	<script src="js/jquery.ui.touch-punch.js"></script>
+	<script type="text/javascript">  
+    
+	$(document).ready(function() {  
+		$("#setallocations").click (function(){
+			window.location.replace("Myallocations.html");
+		});
+	});
+	
+	$(document).ready(function() {  
+		$("#back").click (function(){
+			window.location.replace("index.html");
+		});
+	});
+	</script>
   
  <script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="./assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>	
@@ -428,17 +445,7 @@ Demo.init(); // init demo features
 		}
 	});
 	</script>
-<script>
-	$(document).ready(function(){
-		$("#myallocations").click(function(){
-			window.location.replace("Myallocations.html");
-		});
-		
-		$("#back").click(function(){
-			window.location.replace("index.html");
-		});
-	});
-</script>	
+	
 
 <style>
 <!-- .content
@@ -452,13 +459,7 @@ padding: 30px;
 }
  -->
 </style>
-<script>
-	$(document).ready(function(){
-		$("#calculate").click(function(){
-			//alert($("#age").html());
-		});	
-	});
-</script>
+
 
 	
 
