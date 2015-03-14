@@ -11,8 +11,8 @@
 .ui-slider-horizontal .ui-slider-handle {
 	border-radius: 8px !important;
 	width: 29px !important; 
-	height: 20px !important;
-	margin-top: 3px !important;
+	height: 18px !important;
+	margin-top: 2px !important;
 }
 .icon-radius {
  border-radius: 4px !important;
@@ -183,4 +183,114 @@ background-color:#ffffff;width:44px !important;
 
 .back_space {
 	height:350px !important;
+}
+
+ .container-top {
+ margin-top:55px !important;
+} 
+#sliders {
+ background:white !important;margin-top:-6% !important;
+}
+.radio-a {
+ width:18% !important;font-size:11px !important;
+ border-radius: 4px !important;
+}
+#setallocations {
+ margin:14px 35% !important;background-color: #1BBC9B !important;color:#ffffff !important;
+}
+#calculate {
+ background-color: #1BBC9B !important;color:#ffffff !important;
+}
+#back {
+ background-color: #1BBC9B !important;color:#ffffff !important;
+}
+.calculate-i {
+ color:#ffffff !important;
+}
+.fairly {
+ width:18% !important;font-size:11px !important;padding:3% 0 3% 0 !important;
+}
+.table-result {
+ width: 100% !important;background:white !important;float:left !important;
+}
+.portlet-pad {
+ padding:3px 0 !important;
+}
+.average-growth {
+ width:31% !important;font-size:11px !important;
+}
+.radio {
+ margin:0 0 15px 0 !important;
+}
+@media only screen and (max-width: 768px) {
+
+ .fairly { padding:10px 0 10px 0 !important }
+ #sliders { margin:-3% 0 0 0!important }
+ .container { margin:10px 0 !important }
+}
+
+@media only screen and (max-width: 800px) {
+ .container { margin:10px 0 !important }
+ .fairly { padding:10px 0 10px 0 !important }
+ #sliders { margin:-3% 0 0 0!important }
+}
+
+@media only screen and (max-width: 980px) {
+ .container { margin:10px 10% !important }
+ .fairly { padding:10px 0 10px 0 !important }
+ .average-growth { padding:10px 0 10px 0 !important }
+ #sliders { margin:-3% 0 0 0!important }
+ 
+}
+@media only screen and (max-width: 1280px) {
+
+ .fairly-high { padding:10px 0 10px 0 !important }
+ 
+}
+@media only screen and (max-width: 360px) {
+ .container { padding:0 0 0 0 !important;margin:10px 0 !important }
+ .portlet.light { padding :0 0 0 0 !important }
+ .portlet.light.bordered { border:none !important;}
+ .col-lg-6,.col-md-6 { padding:0 0 0 0 !important }
+ #sliders { width:100% !important; }
+ h3 { font-size:10px !important }
+ button { font-size:12px !important }
+ a { font-size:9px !important }
+ .slider { width:67% !important }
+ .fairly { padding:4px 0px 4px 0!important }
+ .fairly-high { padding:5px 0px 5px 0!important }
+ .average-growth { padding:4px 0 !important; width:32% !important}
+ .amount { font-size:10px !important }
+ #chartData { font-size:11px !important; }
+
+ .ui-slider-horizontal .ui-slider-handle {
+  border-radius: 8px !important;
+  width: 25px !important; 
+  height: 16px !important;
+  margin-top: 3px !important;
+ }
+}
+@media only screen and (max-width: 320px) {
+ #sliders { width:100% !important; }
+ .fairly-high { padding:4px 0 !important }
+ .container { padding:0 0 0 0 !important; }
+ .portlet.light { padding :0 0 0 0 !important }
+ .portlet.light.bordered { border:none !important;}
+ .col-lg-6,.col-md-6 { padding:0 0 0 0 !important }
+ h3 { font-size:10px !important }
+ .fairly { padding:4px 0px 4px 0!important }
+ .average-growth { padding:4px 0 !important; width:38% !important }
+ .page-footer { height:42px !important }
+ .container { margin:10px 0 !important }
+}
+.amount {
+	border-radius:3px !important;
+}
+.helpBtn {
+	border-radius:7px !important;
+}
+.head-text {
+	font-size: 26px !important;
+	font-weight: 100 !important;
+	padding-top: 4% !important;
 }
