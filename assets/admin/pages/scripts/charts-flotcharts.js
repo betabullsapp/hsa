@@ -626,28 +626,35 @@ var ChartsFlotcharts = function() {
 			if(i==0)
 			{
                 data[i] = {
-                    label: "Vanguard" ,
+                    label: "International" ,
                     data: Math.floor(Math.random() * 100) + 1
                 };
 				}
 				else if(i==1)
 			{
                 data[i] = {
-                    label: "Fiedility" ,
+                    label: "Small/Mid-Cap Equity" ,
                     data: Math.floor(Math.random() * 100) + 1
                 };
 				}
 				else if(i==2)
 			{
                 data[i] = {
-                    label: "HSBC" ,
+                    label: "Fixed Income" ,
                     data: Math.floor(Math.random() * 100) + 1
                 };
 				}
 				else if(i==3)
 			{
                 data[i] = {
-                    label: "BlackRock" ,
+                    label: "Large-Cap Equity" ,
+                    data: Math.floor(Math.random() * 100) + 1
+                };
+				}
+				else if(i==4)
+			{
+                data[i] = {
+                    label: "Savings Account" ,
                     data: Math.floor(Math.random() * 100) + 1
                 };
 				}
