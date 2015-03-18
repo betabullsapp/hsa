@@ -187,17 +187,17 @@ background-color:#ffffff;width:44px !important;
 }
 
  .container-top {
- margin-top:55px !important;
+ margin-top:47px !important;
 } 
 #sliders {
- background:white !important;margin-top:-6% !important;padding:10px !important;
+ background:white !important;margin-top:8% !important;padding:10px !important;
 }
 .radio-a {
  width:18% !important;font-size:11px !important;
  border-radius: 4px !important;
 }
 #setallocations {
- margin:0px 7% !important;background-color: #1BBC9B !important;color:#ffffff !important;
+ margin:0px 30% !important;background-color: #1BBC9B !important;color:#ffffff !important;
 }
 #calculate {
  background-color: #1BBC9B !important;color:#ffffff !important;
@@ -209,7 +209,7 @@ background-color:#ffffff;width:44px !important;
  color:#ffffff !important;
 }
 .fairly {
- width:18% !important;font-size:11px !important;padding:10px 0 10px 0 !important;border-radius:5px !important;
+ width:18% !important;font-size:11px !important;padding:10px 0 10px 0 ;border-radius:5px !important;
 }
 .table-result {
  width: 100% !important;background:white !important;float:left !important;
@@ -242,12 +242,12 @@ background-color:#ffffff;width:44px !important;
  
  .fairly { padding:10px 0 10px 0 !important; }
  .average-growth { padding:10px 0 10px 0 !important;border-radius:5px !important; }
-  #sliders { margin:-3% 0% 0 7% !important } 
+  #sliders { margin:6% 0% 0 7% !important } 
  .fairly-high { padding:10px 0 !important; }
 }
 @media only screen and (max-width: 1280px) {
- .fairly { padding:10px 0 10px 0 !important; }
- .fairly-high { padding:10px 0 10px 0 !important }
+ .fairly { padding:0px 0 0px 0 ; }
+ .fairly-high { padding:4px 0 4px 0 ; }
  .average-growth { border-radius:5px !important; }
 }
 @media only screen and (max-width: 360px) {
@@ -255,7 +255,7 @@ background-color:#ffffff;width:44px !important;
  .portlet.light { padding :0 0 0 0 !important }
  /* .portlet.light.bordered { border:none !important;} */
  .col-lg-6,.col-md-6 { padding:0 0 0 0 !important }
- #sliders { width:100% !important; margin:0 0 0 0 !important;}
+ #sliders { width:100% !important; margin:11% 0 0 0 !important;}
  /* h3 { font-size:10px !important } */
  button { font-size:12px !important }
  a { font-size:9px !important }
