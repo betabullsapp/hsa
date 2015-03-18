@@ -626,36 +626,36 @@ var ChartsFlotcharts = function() {
 			if(i==0)
 			{
                 data[i] = {
-                    label: "International" ,
-                    data: Math.floor(Math.random() * 100) + 1
+                    label: "5%" ,
+                    data: 5
                 };
 				}
 				else if(i==1)
 			{
                 data[i] = {
-                    label: "Small/Mid-Cap Equity" ,
-                    data: Math.floor(Math.random() * 100) + 1
+                    label: "0%" ,
+                    data: 0
                 };
 				}
 				else if(i==2)
 			{
                 data[i] = {
-                    label: "Fixed Income" ,
-                    data: Math.floor(Math.random() * 100) + 1
+                    label: "50%" ,
+                    data: 50
                 };
 				}
 				else if(i==3)
 			{
                 data[i] = {
-                    label: "Large-Cap Equity" ,
-                    data: Math.floor(Math.random() * 100) + 1
+                    label: "15%" ,
+                    data: 15
                 };
 				}
 				else if(i==4)
 			{
                 data[i] = {
-                    label: "Savings Account" ,
-                    data: Math.floor(Math.random() * 100) + 1
+                    label: "30%" ,
+                    data: 30
                 };
 				}
 				
@@ -697,7 +697,7 @@ var ChartsFlotcharts = function() {
                                 show: true,
                                 radius: 1,
                                 formatter: function(label, series) {
-                                    return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label + '<br/>' + Math.round(series.percent) + '%</div>';
+                                    return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label  + '%</div>';
                                 },
                                 background: {
                                     opacity: 0.8
@@ -722,7 +722,7 @@ var ChartsFlotcharts = function() {
                                 show: true,
                                 radius: 3 / 4,
                                 formatter: function(label, series) {
-                                    return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;"></div>';
+                                    return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label + '</div>';
                                 },
                                 background: {
                                     opacity: 0.5
