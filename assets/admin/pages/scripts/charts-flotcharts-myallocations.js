@@ -623,43 +623,36 @@ var ChartsFlotcharts = function() {
             series = series < 5 ? 5 : series;
 
             for (var i = 0; i < series; i++) {
-			if(i==0)
-			{
-                data[i] = {
-                    label: "5%" ,
-                    data: 5
-                };
-				}
-				else if(i==1)
-			{
-                data[i] = {
-                    label: "0%" ,
-                    data: 0
-                };
-				}
-				else if(i==2)
-			{
-                data[i] = {
-                    label: "50%" ,
-                    data: 50
-                };
-				}
-				else if(i==3)
-			{
-                data[i] = {
-                    label: "15%" ,
-                    data: 15
-                };
-				}
-				else if(i==4)
-			{
-                data[i] = {
-                    label: "30%" ,
-                    data: 30
-                };
-				}
+			 if(i==0)
+			 {
+                 data[i] = {
+                     label: "Vanguard" ,
+                     data: Math.floor(Math.random() * 100) + 1
+                 };
+				 }
+				 else if(i==1)
+			 {
+                 data[i] = {
+                     label: "Fiedility" ,
+                     data: Math.floor(Math.random() * 100) + 1
+                 };
+				 }
+				 else if(i==2)
+			 {
+                 data[i] = {
+                     label: "HSBC" ,
+                     data: Math.floor(Math.random() * 100) + 1
+                 };
+				 }
+				 else if(i==3)
+			 {
+                 data[i] = {
+                     label: "BlackRock" ,
+                     data: Math.floor(Math.random() * 100) + 1
+                 };
+				 }
 				
-            }
+             }
 
             // DEFAULT
             if ($('#pie_chart').size() !== 0) {
@@ -679,16 +672,7 @@ var ChartsFlotcharts = function() {
                         pie: {
                             show: true,
 							
-							label: {
-                                show: true,
-                                radius: 1,
-                                formatter: function(label, series) {
-                                    return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label  + '</div>';
-                                },
-                                background: {
-                                    opacity: 0.8
-                                }
-                            }
+							
                         }
                     },
                     legend: {
